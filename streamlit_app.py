@@ -43,7 +43,13 @@ fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
 streamlit.dataframe(fruityvice_normalized)
 
 
-# new section to display fruityvice API response
+### new section to display fruityvice API response
+# get data from fruityvice
+def get_fruityvice_data(this_fruit_choice):
+  fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+fruit_choice)
+  fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
+  return fruityvice_normalized
+
 
 streamlit.header('Fruityvice Fruit Advice')
 
@@ -55,7 +61,7 @@ try:
   else:
     fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+fruit_choice)
     fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
-    streamlit.dataframe(fruityvice_normalized)
+    # streamlit.dataframe(fruityvice_normalized)
 except URLError as e:
   streamlit.error()
 
