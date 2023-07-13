@@ -1,0 +1,2 @@
+# requirements.ext 
+snowflake-connector-python
