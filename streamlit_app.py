@@ -82,7 +82,7 @@ if streamlit.button('Get Fruit Load List'):
 
 
 # do not run anything below 
-streamlit.stop()
+# streamlit.stop()
 
 
 # Allow end users to add a fruit to the list (a row in snowflake)
