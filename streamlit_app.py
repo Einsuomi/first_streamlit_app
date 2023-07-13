@@ -71,7 +71,7 @@ def get_fruit_load_list():
   # with my_cnx.cursor() as my_cur:
   my_cur = my_cnx.cursor()
   my_cur.execute("SELECT * FROM pc_rivery_db.public.fruit_load_list")
-  return my_data_rows = my_cur.fetchall()
+  return my_cur.fetchall()
 
 
 # add a button 
